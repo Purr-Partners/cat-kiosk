@@ -1,0 +1,81 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purr Partners Kiosk</title>
+    <style>
+        :root {
+            --rescue-orange: #ff9f43;
+            --rescue-dark: #2d3436;
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--rescue-dark);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 { font-size: 3.5rem; color: var(--rescue-orange); margin-bottom: 0; }
+        p { font-size: 1.5rem; margin-bottom: 40px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            width: 90%;
+            max-width: 900px;
+        }
+        .btn {
+            background: white;
+            border: 4px solid var(--rescue-orange);
+            border-radius: 25px;
+            padding: 50px 20px;
+            text-decoration: none;
+            color: var(--rescue-dark);
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .btn:active { transform: scale(0.95); background: #fff5eb; }
+        .icon { display: block; font-size: 4rem; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Purr Partners</h1>
+    <p>How can you help our cats today?</p>
+    <div class="grid">
+        <a href="https://service.sheltermanager.com/asmservice?account=st1945&method=html_adoptable_animals
+" class="btn">
+            <span class="icon">🐱</span>Meet Our Cats
+        </a>
+        <a href="https://your-donation-link.com" class="btn">
+            <span class="icon">❤️</span>Donate Now
+        </a>
+        <a href="https://sheltermanager.com/service?account=YOURCODE&method=online_form&formid=ADOPT" class="btn">
+            <span class="icon">📋</span>Apply to Adopt
+        </a>
+        <a href="https://your-website.org/volunteer" class="btn">
+            <span class="icon">🏠</span>Volunteer Info
+        </a>
+    </div>
+
+    <script>
+        // Idle Reset Logic (2 Minutes)
+        let timer;
+        const reset = () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { window.location.reload(); }, 120000);
+        };
+        document.onclick = reset;
+        document.ontouchstart = reset;
+    </script>
+</body>
+</html>
